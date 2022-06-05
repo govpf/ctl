@@ -1,0 +1,13 @@
+#!/bin/sh
+
+git clone https://gitlab.gov.pf/devops/kubernetes/clusters.git /bootstrap/clusters
+
+cd /bootstrap/clusters/pf01/1_terraform
+
+echo ""
+echo "PHASE 1 :"
+echo ""
+echo "cd /bootstrap/clusters/pf01/1_terraform"
+echo "make setup"
+echo "make apply"
+echo ""
