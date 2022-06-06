@@ -34,6 +34,13 @@ RUN echo "Installing Vault CLI" && \
     rm -f vault.zip && \
     mv vault /usr/local/bin/ && \
     chmod 755 /usr/local/bin/vault
+
+RUN echo "Installing Boilr CLI" && \
+    wget "https://github.com/tmrts/boilr/releases/download/0.3.0/boilr-0.3.0-linux_amd64.tgz" -O boilr.tgz && \
+    tar -xvzf boilr.tgz && \
+    rm -f boilr.tgz && \
+    mv boilr /usr/local/bin/ && \
+    chmod 755 /usr/local/bin/boilr
     
 WORKDIR /bootstrap
 
