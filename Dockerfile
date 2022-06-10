@@ -41,7 +41,14 @@ RUN echo "Installing Boilr CLI" && \
     rm -f boilr.tgz && \
     mv boilr /usr/local/bin/ && \
     chmod 755 /usr/local/bin/boilr
-    
+
+RUN echo "Installing Terrascan CLI" && \
+    wget "https://github.com/tenable/terrascan/releases/download/v1.15.1/terrascan_1.15.1_Linux_x86_64.tar.gz" -O terrascan.tar.gz && \
+    tar -xvzf terrascan.tar.gz && \
+    rm -fr terrascan.tar.gz CHANGELOG.md LICENSE README.md && \
+    mv terrascan /usr/local/bin/ && \
+    chmod 755 /usr/local/bin/terrascan
+
 WORKDIR /bootstrap
 
 # install terraform
